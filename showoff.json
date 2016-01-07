@@ -1,1 +1,7 @@
-{ "name": "My Preso", "sections": []}
+{ "name": "Git and Github at UMTS"
+, "author": "Matt Moretti"
+, "sections": 
+  [ { "section": "intro"
+    }
+  ]
+}
