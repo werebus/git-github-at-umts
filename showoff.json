@@ -2,6 +2,7 @@
 , "author": "Matt Moretti"
 , "sections": 
   [ { "section": "intro"
+    , "section": "git"
     }
   ]
 }
