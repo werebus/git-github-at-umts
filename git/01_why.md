@@ -15,7 +15,7 @@
 >  As far as I'm concerned, if the code isn't checked into source control,
 >  it doesn't exist.
 >
-> -- <cite>[Jeff Atwood][ch], co-founder Stack Exchange</cite>
+> -- <cite>[Jeff Atwood](http://blog.codinghorror.com/check-in-early-check-in-often/), co-founder Stack Exchange</cite>
 
 <!SLIDE >
 # Why git? #
@@ -33,5 +33,3 @@ try out a new feature is less than 1 second operation. Frequent
 check-ins cost almost nothing and ensure that people looking at the work
 will be able to understand what's going on.
 ~~~ENDSECTION~~~
-
-[ch]:  http://blog.codinghorror.com/check-in-early-check-in-often/

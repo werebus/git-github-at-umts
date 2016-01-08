@@ -1,8 +1,7 @@
 { "name": "Git and Github at UMTS"
 , "author": "Matt Moretti"
 , "sections": 
-  [ { "section": "intro"
-    , "section": "git"
-    }
+  [ { "section": "intro" }
+  , { "section": "git" }
   ]
 }
