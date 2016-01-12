@@ -3,5 +3,6 @@
 , "sections": 
   [ { "section": "intro" }
   , { "section": "git" }
+  , { "section": "github" }
   ]
 }
