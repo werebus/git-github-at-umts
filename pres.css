@@ -26,3 +26,6 @@
   background: #333;
 }
 
+.bullets li {
+  margin-left: 0;
+}

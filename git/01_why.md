@@ -4,10 +4,8 @@
 * Provides a **history** of your work over time. When did that feature get
   added?  What is the state of the live application? What was version
   3.2 like?
-
 * Allows for **acountablity**. Who should we ask about that new feature?
   Can we prove who authored each line of our production code?
-
 * Facilitates **colaboration**. Multiple authors need a way to merge
   their contributions.
 
@@ -21,9 +19,7 @@
 # Why git? #
 
 * Decentralized: every copy has a full, usable history
-
 * Cheap branches: no additional space you change something
-
 * Fast commits: microseconds, and no network communication
 
 ~~~SECTION:notes~~~
