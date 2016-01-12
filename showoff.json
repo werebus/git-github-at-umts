@@ -1,5 +1,8 @@
 { "name": "Git and Github at UMTS"
 , "author": "Matt Moretti"
+, "templates":
+  { "default": "default.tpl"
+  }
 , "sections": 
   [ { "section": "intro" }
   , { "section": "git" }
