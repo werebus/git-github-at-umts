@@ -1,17 +1,4 @@
 Git
-  Things I've tracked
-    Code obvs
-    interviews
-    CS homework
-    Resume
-    DND
-    This presentation
-  Intro to concepts
-    working tree
-    commit
-      good commit-messages
-    branch
-    tag
   Sharing/hosting
     just SSH
     gitolite
@@ -22,22 +9,12 @@ Github
   repository
     public/private
     forks
-  wiki
-    is a git repo
   issues
     @mentions  (team mentions?)
     #issuenum
     Closes/Fixes
     issue-only
-    problem_child?
   pull-request
     as code review
-  interesting rendering
-    README -- any markdown
-    images (diffing)
-    prose
-    CSV
-    GeoJSON
-    Jupyter?
   gh-pages
     businfoboard
