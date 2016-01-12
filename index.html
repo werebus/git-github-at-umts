@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Git and Github at UMTS</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+
+  
+
+  <link rel="stylesheet" type="text/css" href=".//css/fg.menu.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href=".//css/theme/ui.all.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href=".//css/highlight/default.css"  />
+
+  <link rel="stylesheet" type="text/css" href=".//css/showoff.css" />
+  <link rel="stylesheet" type="text/css" href=".//css/font-awesome-4.4.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" src=".//js/jquery-2.1.4.min.js"></script>
+
+  <script type="text/javascript" src=".//js/jquery.cycle.all.js"></script>
+  <script type="text/javascript" src=".//js/jquery-print.js"></script>
+  <script type="text/javascript" src=".//js/jquery.batchImageLoad.js"></script>
+  <script type="text/javascript" src=".//js/jquery.parsequery.min.js"></script>
+  <script type="text/javascript" src=".//js/jquery.doubletap-0.1.js"></script>
+  <script type="text/javascript" src=".//js/fg.menu.js"></script>
+  <script type="text/javascript" src=".//js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src=".//js/highlight.pack.js"></script>
+
+  <script type="text/javascript" src=".//js/coffee-script.js"></script>
+
+  <script type="text/javascript" src=".//js/showoff.js"></script>
+
+  
+    
+    <link rel="stylesheet" href=".//file/pres.css" type="text/css"/>
+  
+    
+    <link rel="stylesheet" href=".//file/octicons.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+    $(function(){
+      setupPreso(false, './');
+    });
+
+    editUrl  = "";
+
+    keymap = {
+  "space": "NEXT",
+  "d": "DEBUG",
+  "up": "PREV",
+  "left": "PREV",
+  "pageup": "PREV",
+  "down": "NEXT",
+  "right": "NEXT",
+  "pagedown": "NEXT",
+  "r": "RELOAD",
+  "c": "CONTENTS",
+  "t": "CONTENTS",
+  "h": "HELP",
+  "/": "HELP",
+  "?": "HELP",
+  "b": "BLANK",
+  ".": "BLANK",
+  "F": "FOOTER",
+  "f": "FOLLOW",
+  "n": "NOTES",
+  "esc": "CLEAR",
+  "p": "PAUSE",
+  "P": "PRESHOW",
+  "x": "EXECUTE",
+  "f5": "EXECUTE"
+};
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+
+<div id="help">
+  <h1>Showoff Hotkeys</h1>
+  <div>
+    <span class="description">Move to the next slide.</span>
+    <span class="action">NEXT</span>
+    <span class="hotkeys"><span class="key">space</span><span class="key">down</span><span class="key">right</span><span class="key">pagedown</span></span>
+  </div>
+  <div>
+    <span class="description">Move to the previous slide.</span>
+    <span class="action">PREV</span>
+    <span class="hotkeys"><span class="key">up</span><span class="key">left</span><span class="key">pageup</span></span>
+  </div>
+  <div>
+    <span class="description">Show the table of contents menu.</span>
+    <span class="action">CONTENTS</span>
+    <span class="hotkeys"><span class="key">c</span><span class="key">t</span></span>
+  </div>
+  <div>
+    <span class="description">Toggle follow mode.</span>
+    <span class="action">FOLLOW</span>
+    <span class="hotkeys"><span class="key">f</span></span>
+  </div>
+  <div>
+    <span class="description">Show this help dialog.</span>
+    <span class="action">HELP</span>
+    <span class="hotkeys"><span class="key">h</span><span class="key">/</span><span class="key">?</span></span>
+  </div>
+
+  <hr />
+
+  <div>
+    <span class="description">Reload all slides.</span>
+    <span class="action">RELOAD</span>
+    <span class="hotkeys"><span class="key">r</span></span>
+  </div>
+  <div>
+    <span class="description">Blank the screen.</span>
+    <span class="action">BLANK</span>
+    <span class="hotkeys"><span class="key">b</span><span class="key">.</span></span>
+  </div>
+  <div>
+    <span class="description">Toggle the display footer.</span>
+    <span class="action">FOOTER</span>
+    <span class="hotkeys"><span class="key">F</span></span>
+  </div>
+  <div>
+    <span class="description">Toggle notes display.</span>
+    <span class="action">NOTES</span>
+    <span class="hotkeys"><span class="key">n</span></span>
+  </div>
+  <div>
+    <span class="description">Clear code execution results.</span>
+    <span class="action">CLEAR</span>
+    <span class="hotkeys"><span class="key">esc</span></span>
+  </div>
+  <div>
+    <span class="description">Pause the presentation.</span>
+    <span class="action">PAUSE</span>
+    <span class="hotkeys"><span class="key">p</span></span>
+  </div>
+  <div>
+    <span class="description">Display slideshow of <tt>preshow</tt> images on a timer.</span>
+    <span class="action">PRESHOW</span>
+    <span class="hotkeys"><span class="key">P</span></span>
+  </div>
+  <div>
+    <span class="description">Execute the first visible code block.</span>
+    <span class="action">EXECUTE</span>
+    <span class="hotkeys"><span class="key">x</span><span class="key">f5</span></span>
+  </div>
+
+  <hr />
+
+  <div>
+    <span class="description">Show debugging information.</span>
+    <span class="action">DEBUG</span>
+    <span class="hotkeys"><span class="key">d</span></span>
+  </div>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso"><center>loading presentation...</center></div>
+<div id="footer">
+  <span id="followMode"></span>
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+  <span id="slideFilename"></span>
+  <img id="disconnected" src=".//css/disconnected.png" />
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div id="intro_01_title" class="slide center" data-transition="none">
+<div class="content center" ref="intro/01_title">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Git and Github at UMTS</h1>
+
+<h2>AFS Lunch-and-learn</h2>
+
+<p>2016-01-12</p>
+</div>
+</div>
+<div id="intro_02_follow_along" class="slide " data-transition="none">
+<div class="content " ref="intro/02_follow_along">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Follow along:</h1>
+
+<p><a href="http://example.com/" target="_blank">http://example.com/</a></p>
+
+<p>Press <code>?</code> for hotkeys</p>
+
+<div class="notes"><p>
+This presentation in written with
+<a href="https://github.com/puppetlabs/showoff" target="_blank">showoff</a> and served via
+<a href="http://heroku.com/" target="_blank">heroku</a>. If you're on the Internet, you can follow
+along with me.
+</p></div>
+</div>
+</div>
+<div id="intro_03_about_me" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="intro/03_about_me">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>About Me</h1>
+
+<ul>
+<li> Matt Moretti</li>
+<li> <span class="mega-octicon octicon-mark-github"></span>
+<a href="https://github.com/werebus" target="_blank">@werebus</a>
+</li>
+<li> Transit/RTIC systems analyst</li>
+<li> Transit student employee</li>
+<li> Now full-time with AFS</li>
+</ul>
+</div>
+</div>
+<div id="intro_04_overview" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="intro/04_overview">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Overview</h1>
+
+<ul>
+<li> Intro to Git SCM</li>
+<li> Intro to GitHub features</li>
+<li> Examples of use at UMTS</li>
+</ul>
+
+<div class="notes">
+<p>
+Is this presentation going to be a bit fan-boy-ish? Probably. I <em>really</em>
+like git and I hope you will too, but ultimately what's important is
+that you're doing <em>something</em> to track your source code.</p>
+
+<p>I want to cover enough of Git that we can all know what I'm talking
+about, but a slideshow isn't the best way to learn this stuff.  I'll
+have some resources at the end.
+</p>
+</div>
+</div>
+</div>
+<div id="git_01_why1" class="slide " data-transition="none">
+<div class="content " ref="git/01_why/1">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Why Source-control?</h1>
+
+<ul>
+<li>Provides a <strong>history</strong> of your work over time. When did that feature get
+added?  What is the state of the live application? What was version
+3.2 like?</li>
+<li>Allows for <strong>acountablity</strong>. Who should we ask about that new feature?
+Can we prove who authored each line of our production code?</li>
+<li>Facilitates <strong>colaboration</strong>. Multiple authors need a way to merge
+their contributions.</li>
+</ul>
+</div>
+</div>
+<div id="git_01_why2" class="slide " data-transition="none">
+<div class="content " ref="git/01_why/2">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<blockquote>
+<p>As far as I'm concerned, if the code isn't checked into source control,
+ it doesn't exist.</p>
+
+<p>-- <cite><a href="http://blog.codinghorror.com/check-in-early-check-in-often/" target="_blank">Jeff Atwood</a>, co-founder Stack Exchange</cite></p>
+</blockquote>
+</div>
+</div>
+<div id="git_01_why3" class="slide " data-transition="none">
+<div class="content " ref="git/01_why/3">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Why git?</h1>
+
+<ul>
+<li>Decentralized: every copy has a full, usable history</li>
+<li>Cheap branches: no additional space you change something</li>
+<li>Fast commits: microseconds, and no network communication</li>
+</ul>
+
+<div class="notes"><p>
+The ability to make fast commits and inexpensive branches encourages
+developers to work in a granular yet creative manner. Making a branch to
+try out a new feature is less than 1 second operation. Frequent
+check-ins cost almost nothing and ensure that people looking at the work
+will be able to understand what's going on.
+</p></div>
+</div>
+</div>
+<div id="git_02_example_repos" class="slide " data-transition="none">
+<div class="content " ref="git/02_example_repos">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Track Anything</h1>
+
+<p>Some examples of git repositories I've worked on</p>
+
+<ul>
+<li> <a href="https://github.com/umts/jobapps" target="_blank">umts/jobapps</a>
+</li>
+<li> <a href="https://github.com/werebus/cs187" target="_blank">werebus/cs187</a>
+</li>
+<li> <span class="mega-octicon octicon-lock"></span>
+<a href="https://github.com/umts/interviews" target="_blank">umts/intervews</a>
+</li>
+<li> <span class="mega-octicon octicon-lock"></span>
+<a href="https://github.com/werebus/resume" target="_blank">werebus/resume</a>
+</li>
+<li> <a href="https://github.com/werebus/git-github-at-umts" target="_blank">werebus/git-github-at-umts</a>
+</li>
+</ul>
+
+<div class="notes"><p>
+You can obviously use git to version source code, but really anything
+that is a file on your computer that you'd like to maintain a version
+history of is fair game.
+</p></div>
+</div>
+</div>
+<div id="git_03_concepts1" class="slide " data-transition="none">
+<div class="content " ref="git/03_concepts/1">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Concepts</h1>
+</div>
+</div>
+<div id="git_03_concepts2" class="slide " data-transition="none">
+<div class="content " ref="git/03_concepts/2">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<p>Your <strong>working tree</strong> is simply a directory and also the current state
+of your code.</p>
+</div>
+</div>
+<div id="git_03_concepts3" class="slide " data-transition="none">
+<div class="content " ref="git/03_concepts/3">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<p><strong>Commits</strong> are incremental changes to your code:</p>
+
+<p><img src="./file/git/commits.png" alt="Some commits"></p>
+</div>
+</div>
+<div id="git_03_concepts4" class="slide " data-transition="none">
+<div class="content " ref="git/03_concepts/4">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<p>A <strong>branch</strong> allow commits to be made apart from the main ("master")
+branch.</p>
+
+<p><img src="./file/git/branch1.png" alt="Create a branch"></p>
+</div>
+</div>
+<div id="git_03_concepts5" class="slide " data-transition="none">
+<div class="content " ref="git/03_concepts/5">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<p>A <strong>branch</strong> allow commits to be made apart from the main ("master")
+branch.</p>
+
+<p><img src="./file/git/branch2.png" alt="Commit to it"></p>
+</div>
+</div>
+<div id="git_03_concepts6" class="slide " data-transition="none">
+<div class="content " ref="git/03_concepts/6">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<p>A <strong>branch</strong> allow commits to be made apart from the main ("master")
+branch.</p>
+
+<p><img src="./file/git/branch3.png" alt="Work continues on master"></p>
+</div>
+</div>
+<div id="git_03_concepts7" class="slide " data-transition="none">
+<div class="content " ref="git/03_concepts/7">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<p>A <strong>branch</strong> allow commits to be made apart from the main ("master")
+branch.</p>
+
+<p><img src="./file/git/branch4.png" alt="Merge back in"></p>
+</div>
+</div>
+<div id="git_04_resources" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="git/04_resources">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Resources</h1>
+
+<ul>
+<li><a href="http://try.github.io/" target="_blank">http://try.github.io/</a></li>
+<li><a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git</a></li>
+</ul>
+
+<p><img src="./file/git/progit2.png" alt="Pro Git" style="width: 140px;"></p>
+
+<div class="notes"><p>
+I really encourage people to just try screwing around with git.  It's
+pretty easy when you're experiencing it hands-on. Having a git
+repository is as easy as <code>git init</code>.
+</p></div>
+</div>
+</div>
+<div id="git_05_hosting" class="slide " data-transition="none">
+<div class="content " ref="git/05_hosting">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Hosting git</h1>
+
+<ul>
+<li> Just SSH</li>
+<li> <a href="http://gitolite.com/gitolite/index.html" target="_blank">Gitolite</a>
+</li>
+<li> <a href="https://about.gitlab.com/" target="_blank">GitLab</a>
+</li>
+<li> And, of course...</li>
+</ul>
+
+<div class="notes"><p>
+For self-hosted git servers there's generally a trade-off between
+simplicity and configurability/useability.
+</p></div>
+</div>
+</div>
+<div id="github_01_orgs" class="slide " data-transition="none">
+<div class="content " ref="github/01_orgs">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Our Organization</h1>
+
+<p><img src="./file/github/org.png" alt="umts org"></p>
+
+<div class="notes">
+<p>
+Some things to note here</p>
+
+<ul>
+<li> You can see that we have a bunch of repositories (48), some of them
+private.</li>
+<li> We have 24 members (on the right)
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+<div id="github_02_repo" class="slide " data-transition="none">
+<div class="content " ref="github/02_repo">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>A repository in our organization</h1>
+
+<p><img src="./file/github/repo.png" alt="umts/screaming-dinosaur"></p>
+
+<div class="notes">
+<p>
+Here is one of our repositories.  Note the fork button in the
+upper-right.</p>
+
+<p>Also, every repository can have a wiki and issues
+</p>
+</div>
+</div>
+</div>
+<div id="github_03_issues" class="slide " data-transition="none">
+<div class="content " ref="github/03_issues">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Issues</h1>
+
+<p><img src="./file/github/issue.png" alt="An issue"></p>
+
+<div class="notes"><p>
+This is an issue on our main Rails app.  You can see that we've
+assigned a few labels including the "programmer training" one, you'll
+also see that it's assigned to a particular programmer, and that it's
+been mentioned from another issue.
+</p></div>
+</div>
+</div>
+<div id="github_04_prs1" class="slide " data-transition="none">
+<div class="content " ref="github/04_prs/1">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Pull Requests</h1>
+
+<p><img src="./file/github/pr.png" alt="PR"></p>
+
+<div class="notes">
+<p>
+A PR is really just an issue that's connected to a "desired" merge
+commit.</p>
+
+<p>Here you can see the beginning of a PR discussion.  Some things to note:</p>
+
+<ul>
+<li> The programmer has attached a screenshot</li>
+<li> She also added in the comment some related issues that will be closed
+by this PR. Those issues will be closed <em>when</em> this PR is merged.</li>
+<li> You can see the name of the branch that was merged, note that it is
+from Anbranin's fork of the app</li>
+<li> At the bottom is one of the commits in the branch.  Note the
+checkmark; Dave will talk about what that is.
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+<div id="github_04_prs2" class="slide " data-transition="none">
+<div class="content " ref="github/04_prs/2">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Pull Request Diffs</h1>
+
+<p><img src="./file/github/pr-diff.png" alt="diff"></p>
+
+<div class="notes">
+<p>
+This is a portion of the diff of that PR.  Notice that Dave added an
+in-line comment on that commit.</p>
+
+<p>We use PRs as our code-review process.  In general, someone else looks
+at the code before merging it into "master" amounting to a
+peer-reviewed process.
+</p>
+</div>
+</div>
+</div>
+<div id="conclusion_01_questions" class="slide " data-transition="none">
+<div class="content " ref="conclusion/01_questions">
+<div class="bg-left"></div>
+
+<div class="bg-right"></div>
+
+<h1>Questions?</h1>
+</div>
+</div>
+</div>
+<div id="pauseScreen">
+  PAUSED
+</div>
+
+</body>
+</html>
