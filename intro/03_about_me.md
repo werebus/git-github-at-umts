@@ -1,8 +1,9 @@
-<!SLIDE bullets incremental>
+<!SLIDE bullets>
 # About Me #
 
 *  Matt Moretti
-*  ![GitHub](gh.png) [@werebus](https://github.com/werebus)
+*  <span class="mega-octicon octicon-mark-github"></span>
+   [@werebus](https://github.com/werebus)
 *  Transit/RTIC systems analyst
 *  Transit student employee
-*  Full-time with AFS
+*  Now full-time with AFS
